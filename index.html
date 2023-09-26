@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Liste déroulante en Javascript</title>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            function choix(form)
+            {
+                i=form.rubriques.selectedIndex;
+                console.log(i);
+                if (i==0) {var txt = new Array ('','','');}
+                switch (i)
+                {
+                    case 1 : var txt = new Array ('Rose','Tulipe','Oeillet'); break;
+                    case 2 : var txt = new Array ('Mouche', 'Moustique', 'Abeille'); break;
+                    case 3 : var txt = new Array ('Boulot', 'Charme', 'Chêne'); break;
+                }
+                for (var i=0; i<3; i++)
+                {
+                    form.pages.options[i+1].text=txt[i];        
+                }
+            }
+        </script>
+    </head>
+    <body>
+    <form action="">
+        <select name="rubriques" onChange='choix(this.form)'>
+            <option>-- Choisissez une rubrique ---</option>
+            <option>Fleurs</option>
+            <option>Insectes</option>
+            <option>Arbres</option>
+        </select>
+        <select name="pages">
+            <option>-- Choisissez une rubrique ---</option>
+            <option></option>
+            <option></option>
+            <option></option>
+        </select>
+    </form>
+    </body>
+</html>
